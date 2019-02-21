@@ -1,35 +1,35 @@
 #!/bin/bash
 
-#############################################################################
-# This tool will prompt the user to input a word or phrase                  #
-# and then will encrypt their input and save the output to the clipboard as #
-# an encrypted string along with a salt and passphrase to decrypt           #
-# the string.                                                               #
-#############################################################################
-#                                                                           #
-# To decrypt the string:                                                    #
-# First, in whatever script you need to use the encrypted                   #
-# string, establish this function:                                          #
-#                                                                           #
-# function DecryptString() {                                                #
+#################################################################################
+# This tool will prompt the user to input a word or phrase                  	#
+# and then will encrypt their input and save the output to the clipboard as 	#
+# an encrypted string along with a salt and passphrase to decrypt           	#
+# the string.                                                               	#
+#################################################################################
+#                                                                          	#
+# To decrypt the string:                                                    	#
+# First, in whatever script you need to use the encrypted                   	#
+# string, establish this function:                                          	#
+#                                                                           	#
+# function DecryptString() {                                                	#
 #	echo "${1}" | /usr/bin/openssl enc -aes256 -d -a -A -S "${2}" -k "${3}" #
-#  }                                                                        #
-#                                                                           #
-# Once that function is established you can call the "DecryptString"        #
-# function alongside the encrypted string, salt, and passphrase to          #
-# decrypt the Encrypted String as so:                                       #
-#                                                                           #
-# DecryptString "EncryptedString" "Salt" "Passphrase"   					# 
-#                  														    #
-# It is recommended for added security to pass the                          #
-# Encryped String as a parameter from Jamf so that both                     #
-# pieces of the key live in separate places   							    #
-#																			#
-# For example:																#
-#																			#
-# DecryptString "$4" "Salt" "Passphrase".                                   #
-#																			#
-#############################################################################
+#  }                                                                        	#
+#                                                                           	#
+# Once that function is established you can call the "DecryptString"        	#
+# function alongside the encrypted string, salt, and passphrase to          	#
+# decrypt the Encrypted String as so:                                       	#
+#                                                                           	#
+# DecryptString "EncryptedString" "Salt" "Passphrase"   			# 
+#                  								#							    #
+# It is recommended for added security to pass the                          	#
+# Encryped String as a parameter from Jamf so that both                     	#
+# pieces of the key live in separate places   					#
+#										#										#
+# For example:									#								#
+#										#										#
+# DecryptString "$4" "Salt" "Passphrase".                                   	#
+#										#									#
+#################################################################################
 
 #Establish the function for the encryption process
 function GenerateEncryptedString() {
