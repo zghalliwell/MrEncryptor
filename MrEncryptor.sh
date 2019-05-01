@@ -20,15 +20,15 @@
 # decrypt the Encrypted String as so:                                       	#
 #                                                                           	#
 # DecryptString "EncryptedString" "Salt" "Passphrase"   			# 
-#                  								#							    #
+#                  								#
 # It is recommended for added security to pass the                          	#
 # Encryped String as a parameter from Jamf so that both                     	#
 # pieces of the key live in separate places   					#
-#										#										#
-# For example:									#								#
-#										#										#
+#										#
+# For example:									#
+#										#
 # DecryptString "$4" "Salt" "Passphrase".                                   	#
-#										#									#
+#										#
 #################################################################################
 
 #Establish the function for the encryption process
