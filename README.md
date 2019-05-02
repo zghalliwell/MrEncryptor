@@ -14,7 +14,9 @@ To decrypt the string:
 First, in whatever script you need to use the encrypted string, establish this function:
 
 function DecryptString() {
+
   echo "${1}" | /usr/bin/openssl enc -aes256 -d -a -A -S "${2}" -k "${3}"
+  
   }
 
 Once that function is established you can call the "DecryptString"
